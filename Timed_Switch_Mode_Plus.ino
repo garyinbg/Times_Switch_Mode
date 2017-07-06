@@ -140,7 +140,7 @@ void Count_Millis(long Press_Time, long Release_Time)
 // 
 //%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% DID YOU COME UP WITH THIS ?????  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-										  if (Release_Time - Press_Time > 1255 )// Decrease mode by three steps by ONE press of the button if more than 1255 mS and less that 20000 mS
+										  if (Release_Time - Press_Time > 1255 && Release_Time - Press_Time < 2000)// Decrease mode by three steps by ONE press of the button if more than 1255 mS and less that 20000 mS
 										  {                                                                        // This allows very fast return to the 'Safe Mode' without going down through all other states
  											 State_Counter -= 3;                                                   // Decrement the mode state to the first level mode state immediately without going through the other states, one by one
  											 if ( State_Counter <= 0)                                              // if the state would have gone below '0'stop it at '0'
